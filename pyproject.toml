@@ -1,0 +1,39 @@
+[project]
+name = "cmu-10414-homework"
+version = "0.1.0"
+description = "CMU 10-414/10-714 Deep Learning Systems Homework"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=1.26.0",
+    "pytest>=9.0.0",
+    "pybind11>=2.11.1",
+    "jupyter>=1.0.0",
+    "notebook>=7.0.0",
+    "ipykernel>=6.29.0",
+    "mugrade @ git+https://github.com/dlsys10714/mugrade.git",
+    "matplotlib>=3.8.0",
+    "torch>=2.0.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = []
+
+[dependency-groups]
+dev = [
+    "black>=24.0.0",
+    "ipython>=8.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
+
+[tool.black]
+line-length = 100
+target-version = ['py312']
+
